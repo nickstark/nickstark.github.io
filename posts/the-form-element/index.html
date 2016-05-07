@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Let’s get better at forms #1: The form element and its children | Nick Stark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Forms are an essential part of making the web accessible. Some basics on constructing forms.">
+
+    <meta property="og:title" content="Let’s get better at forms #1: The form element and its children">
+<meta property="og:description" content="Forms are an essential part of making the web accessible. Some basics on constructing forms.">
+<meta property="og:url" content="http://nickstark.net/posts/the-form-element/">
+<meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Let’s get better at forms #1: The form element and its children">
+<meta name="twitter:description" content="Forms are an essential part of making the web accessible. Some basics on constructing forms.">
+<meta name="twitter:url" content="http://nickstark.net/posts/the-form-element/">
+<meta name="twitter:site" content="@nickstark">
+
+    <link rel="stylesheet" href="/assets/styles/main.css?buster=1462648102622">
+    <link rel="stylesheet" href="/assets/vendor/prism/prism.css?buster=1462648102622">
+
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="header" role="banner">
+            <svg class="logo" width="132" height="132" viewBox="0 0 132 132">
+                <a class="logo-link" xlink:href="/" fill="#1A89C6" aria-label="Go Home">
+                	<circle fill="transparent" class="logo-ring" stroke="#1A89C6" stroke-width="2" stroke-miterlimit="10" cx="65.6" cy="65.6" r="64.6"/>
+                	<path class="logo-letter logo-letter_N" d="M32.4,75.7c3.7-7.5,6.5-13.5,8.4-17.8c1.9-4.3,2.8-7.1,2.8-8.3c0-0.4-0.1-0.8-0.4-1.1c-0.3-0.3-0.5-0.4-0.9-0.4
+                		c-0.6,0-2.5,0.8-5.5,2.3c-2.5,1.3-4.3,2.3-5.5,3.1c-1.2,0.8-2.7,1.8-4.8,3.3c-2,1.4-3.2,2.1-3.5,2.1c-0.6,0-0.9-0.5-0.9-1.5
+                		c0-1.9,1-4.5,3-7.7c2-3.2,4.8-6,8.2-8.4c0.4-0.3,0.6-0.3,0.6,0.1c0,0.1-0.3,0.4-0.8,0.9c-0.5,0.5-0.9,0.9-1.3,1.4
+                		c-0.4,0.5-0.8,1.2-1.3,2.1c4.4-2.7,7.6-4.6,9.7-5.7c2.1-1.1,3.8-1.7,5.3-1.7c1.3,0,2.3,0.3,3,1c0.7,0.7,1.1,1.6,1.1,2.8
+                		c0,1.1-0.4,2.6-1.1,4.7c-0.7,2.1-1.7,4.6-3.1,7.5c-1.3,2.9-2.7,5.9-4.1,8.7c-1.4,2.9-3.9,8.1-7.6,15.6c4.1-6.2,7.8-11.7,11.2-16.4
+                		c3.4-4.7,6.4-8.5,8.9-11.4s4.7-5.1,6.4-6.6c1.7-1.5,3-2.2,3.8-2.2c0.3,0,0.6,0.3,1,1c0.4,0.7,0.8,1.5,1.1,2.5
+                		c0.3,1,0.5,1.8,0.5,2.4c0,1.7-0.4,3.4-1.1,5.1c-0.7,1.7-1.7,3.7-3.1,6c-3.9,6.5-6.8,11.7-8.6,15.4c-1.8,3.8-2.7,6.8-2.7,9.1
+                		c0,1.7,0.7,2.6,2.2,2.6c0.7,0,1.5-0.3,2.4-0.9s2-1.6,3.2-2.9c1.3-1.3,2.5-2.7,3.8-4.2l0.1,3c-1.8,2.3-3.4,4.2-4.8,5.8s-2.8,3-4,4.2
+                		c-1.3,1.2-2.4,2.1-3.4,2.7s-1.9,0.9-2.6,0.9c-1.1,0-2-0.5-2.6-1.4c-0.7-0.9-1-2.1-1-3.6c0-1.4,0.2-3.1,0.7-5c0.5-2,1.2-4.2,2.3-6.8
+                		c1-2.6,2.3-5.4,3.8-8.4c1.5-3,3.2-6.1,5.1-9.4c1.8-3.2,2.8-5.3,2.8-6.2c0-0.5-0.2-0.8-0.7-0.8c-1.9,0-6.1,4.6-12.7,13.7
+                		c-0.4,0.6-1.1,1.6-2.2,3.1c-1,1.5-2.1,3.2-3.2,4.9c-1.1,1.7-2.3,3.7-3.6,5.8c-1.3,2.1-2.7,4.3-4.1,6.5c-0.6,1.1-1.2,1.6-1.7,1.6
+                		c-0.5,0-1.2-0.5-2-1.5s-1.2-1.7-1.2-2.2c0-0.5,0.6-1.9,1.7-4C30.8,79,31.7,77.2,32.4,75.7z"/>
+                	<path class="logo-letter logo-letter_S" d="M95.4,79.5c-0.5-1.2-1.3-2.2-2.4-3.2c-1-1-2.2-1.7-3.5-2.3c-1.3-0.6-2.7-1-4.1-1.3c-4.2-0.8-8.2-2.5-11.8-5.1
+                		c-0.3-0.2-0.6-0.6-1-1.3c-0.4-0.7-0.5-1.3-0.5-1.9c0-2.3,0.3-4.5,0.9-6.8c0.6-2.3,1.4-4.1,2.4-5.3c1.5-2.1,4.3-4,8.4-5.6
+                		c4-1.6,8.6-2.4,13.6-2.4c3,0,5.3,0.3,7,0.8c1.6,0.6,2.5,1.4,2.5,2.6c0,1.9-0.2,3.4-0.6,4.5c-0.4,1.1-0.9,1.8-1.4,2.1
+                		c-0.5,0.3-1.4,0.8-2.6,1.4c-1.3,0.6-2.5,1.2-3.4,1.8s-1.8,1.2-2.5,1.8c-0.7,0.6-1.1,0.8-1.3,0.8c-0.2,0-0.3-0.1-0.3-0.3
+                		c0-0.4,0.4-1.1,1.1-2c0.7-0.9,1.7-1.7,2.7-2.3c1.2-0.7,1.7-1.2,1.7-1.4c0-0.3-0.6-0.5-1.9-0.5c-3.9,0-7.5,0.4-10.7,1.3
+                		c-3.3,0.8-5.9,2-7.8,3.4S77,61,77,62.4c0,0.9,0.4,1.5,1.2,1.9c0.8,0.4,2.5,1,5.2,1.9c2.7,0.9,5.1,1.9,7.2,3c3,1.6,5.3,3.3,6.8,5
+                		c1.5,1.7,2.2,3.7,2.2,5.8c0,1.5-0.3,2.9-0.9,4.4c-0.6,1.5-1.4,2.8-2.5,4.1s-2.4,2.2-3.8,3c-1.2,0.6-2.8,1.2-4.7,1.8
+                		c-1.9,0.6-3.9,1-6.1,1.3c-2.2,0.3-4.3,0.5-6.3,0.5c-3.7,0-6.6-0.4-8.8-1.3C64.2,93,63,91.7,63,90c0-0.8,0.4-2,1.1-3.6
+                		s1.6-2.7,2.7-3.3c0.9-0.4,1.8-0.7,2.6-0.8c0.8-0.1,1.3,0.1,1.3,0.4c0,0.1,0,0.2-0.1,0.2c-0.1,0.1-0.1,0.1-0.2,0.2
+                		c-0.1,0.1-0.2,0.1-0.3,0.2c-0.4,0.2-0.8,0.4-1,0.5c-0.3,0.1-0.5,0.2-0.6,0.3c-0.2,0.1-0.2,0.3-0.2,0.5c0,0.5,2.2,0.8,6.5,0.8
+                		c3.8,0,6.9-0.2,9.3-0.5c2.4-0.3,4.5-0.9,6.4-1.8C92.2,82.2,93.9,81,95.4,79.5z"/>
+                	<circle fill="none" stroke="#1A89C6" stroke-width="7" stroke-miterlimit="10" cx="65.6" cy="65.6" r="53.5"/>
+                </a>
+            </svg>
+        </header>
+
+        <main class="main" role="main">
+
+    <article>
+        <h2 class="hdg hdg_center"><a href="/posts/the-form-element/">Let’s get better at forms #1: The form element and its children</a></h2>
+        <time class="postDetail postDetail_center" datetime="2016-01-07">January 7th, 2016</time>
+        <div class="userContent">
+            <p>Forms are an essential part of making the web accessible. Not only that, but they provide a lot of functionality out of the gate that we sometimes take for granted or even re-implement ourselves with brittle JavaScript solutions.</p>
+<pre><code class="lang-html">&lt;form action=&quot;path/to/myFormHandler.php&quot; method=&quot;post&quot; id=&quot;myForm&quot;&gt;
+    ...
+&lt;/form&gt;
+</code></pre>
+<h2 id="-action-"><code>action</code></h2>
+<p>The url the backend will use to handle form data. This is <strong>required</strong> if the form is to function without the use of JavaScript.</p>
+<h2 id="-method-"><code>method</code></h2>
+<p>Should be either &quot;get&quot; or &quot;post&quot;. The default is &quot;get&quot; but I find it more predictable and explicit to <strong>always</strong> include the <code>method</code> attribute.</p>
+<h3 id="-get-">&quot;get&quot;</h3>
+<ul>
+<li>encodes form data into the url, and can be bookmarked</li>
+<li>should be used for requests that have no side-effects, such as a search form</li>
+<li>should <strong>NOT</strong> be used for any kind of sensitive data, such as passwords</li>
+<li>is restricted by the safe url limit of browsers and web servers (generally, a good rule of thumb to be below 2048 characters)</li>
+<li>is restricted to ascii characters to be url-safe</li>
+<li>can be cached due to the lack of server-side effects</li>
+</ul>
+<h3 id="-post-">&quot;post&quot;</h3>
+<ul>
+<li>encoded form data into the request body, and <strong>cannot</strong> be bookmarked</li>
+<li>should be used for forms that create/modify/delete data, such as signup and user profile editing</li>
+<li>should be used (in conjunction with HTTPS) for submitting sensitive data to the server</li>
+<li>supports file uploading and large parameter payloads</li>
+</ul>
+<h2 id="-id-"><code>id</code></h2>
+<p>While the <code>id</code> attribute is not <em>strictly</em> required, I find it very useful to include on the base form element for a few reasons.</p>
+<ul>
+<li>Using an ID exposes the form to the <code>document</code>’s list of forms via JavaScript, available at <code>document.forms.myForm</code>. This gives the developer a simple, clear, and efficient way to access any form on the page instead of having to resort to queries such as <code>$(&#39;form.myFormClass&#39;)[0]</code> or <code>document.querySelector(&#39;form.myFormClass&#39;)</code>.</li>
+<li>It allows you to deep link to a form, just like any other ID-labelled element.</li>
+<li>HTML5 introduced a new <code>form</code> attribute on form controls that allows the form to include them even if they&#39;re not a descendant of the <code>&lt;form&gt;</code> element. While support is questionable now, its use in the future may reduce the number of styling hacks needed when creating form markup.</li>
+</ul>
+<h2 id="children-of-the-form">Children of the form</h2>
+<p>Controls within the form all share a few characteristics. When the form is submitted, controlls within the form send their current values to the server.</p>
+<h3 id="initial-value">Initial value</h3>
+<p>Most form controls have an initial value set. If it&#39;s a binary input like a checkbox or radio button, the initial value is whether or not it&#39;s checked. Text inputs have an initial value specified in the <code>value</code> attribute.</p>
+<p>Initial values come into play when a form is reset, either by the user interacting with a reset button or calling the <a href="#controlling-the-form"><code>reset()</code></a> method on the form via JavaScript.</p>
+<h3 id="-id-vs-name-"><code>id</code> vs <code>name</code></h3>
+<p>These two similar attributes are often a cause of confusion. While they both label the control, they actually serve two different purposes.</p>
+<p>Use an <code>id</code> attribute to identify a specific form control. Doing so will allow a <code>&lt;label&gt;</code> element to target the control with its <code>for</code> attribute. Another benefit of using an ID is that, similar to <code>document.forms</code>, a shortcut is provided in the DOM API to select form elements with IDs. We’ll go into more depth <a href="#controlling-the-form">later</a>. <code>id</code> attributes must be non-empty and unique within the page.</p>
+<p>The <code>name</code> attribute serves a couple of purposes on controls. First, it is the key used when sending data to the server in key-value pairs. For example, searching for &quot;R2D2&quot; in a form where the search input has a name of &quot;search&quot; might end with this: <code>?search=R2D2</code>. The second use is grouping elements such as radio buttons. Radio buttons with the same name will limit the number of checked buttons to 1 element in the set. <code>name</code> attributes <strong>CAN</strong> be duplicated within a form, and therefore, are not a fool-proof way to select an element.</p>
+<h3 id="disabled-states">Disabled states</h3>
+<p>Form controls, such as <code>&lt;input&gt;</code> elements, have a binary <code>disabled</code> attribute that has a few side effects. Disabled controls:</p>
+<ul>
+<li>are often greyed out by the browser and user interaction is prohibited</li>
+<li>are <strong>NOT</strong> sent to the server via form submission</li>
+<li>do not validate via HTML5 form validation</li>
+<li>can be styled with the <code>:disabled</code> css selector (IE9+) or the <code>[disabled]</code> css attribute selector (IE7+).</li>
+</ul>
+<h2 id="controlling-the-form">Controlling the form</h2>
+<p>There are a few key ways to manipulate a form via JavaScript. Here are the essentials.</p>
+<h3 id="-form-submit-"><code>form.submit()</code></h3>
+<p>Submitting a form via JavaScript will send data to the server. This mimics what would happen if the user clicked a submit button.</p>
+<h3 id="-form-reset-"><code>form.reset()</code></h3>
+<p>Reset will clear the form and reset each control to its <a href="#initial-value">initial value</a>.</p>
+<h3 id="-form-elements-"><code>form.elements</code></h3>
+<p>Similar to <code>document.forms</code>, the DOM provides a collection on the form element itself called <code>elements</code>. Using this collection, we can grab a reference to any form control child with an ID by using <code>form.element.myControlID</code>.</p>
+<h2 id="summary">Summary</h2>
+<p>Now that we’ve started from scratch with forms, we can look at more complex patterns within them. To recap what we’ve covered here:</p>
+<ul>
+<li>Forms need <code>action</code>, <code>method</code>, and (preferrably) <code>id</code> attributes.</li>
+<li>Use &quot;get&quot; and &quot;post&quot; correctly and responsibly.</li>
+<li>Form elements have initial values that can be easily reset.</li>
+<li>Disabled elements behave differently than normal controls.</li>
+<li>Make use of <code>document.forms</code> and <code>form.elements</code> to simplify DOM selection and traversal.</li>
+</ul>
+
+        </div>
+    </article>
+
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div>Nick Stark</div>
+        <div>
+            <a href="https://twitter.com/nickstark">@nickstark</a>
+        </div>
+    </footer>
+
+    </div>
+
+    <script type="text/javascript" src="/assets/vendor/prism/prism.js?buster=1462648102622"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-62180611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
